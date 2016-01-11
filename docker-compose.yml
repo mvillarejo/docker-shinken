@@ -1,0 +1,52 @@
+# SHINKEN COMPOSE FILE
+
+# CORE
+shinken-arbiter:
+   image: shinken-arbiter:latest
+   container_name: shinken-arbiter-1
+   volumes:
+       - ./custom_configs:/sites/shinken
+
+shinken-broker:
+   image: shinken-broker:latest
+   container_name: shinken-broker-1
+   volumes:
+       - ./custom_configs:/sites/shinken
+   ports:
+       - "8001:7767"
+
+shinken-receiver:
+   image: shinken-receiver:latest
+   container_name: shinken-receiver-1
+   volumes:
+       - ./custom_configs:/sites/shinken
+
+shinken-reactionner:
+   image: shinken-reactionner:latest
+   container_name: shinken-reactionner-1
+   volumes:
+       - ./custom_configs:/sites/shinken
+
+
+# MULTIPLES
+shinken-scheduler:
+   image: shinken-scheduler:latest
+   container_name: shinken-scheduler-1
+   volumes:
+       - ./custom_configs:/sites/shinken
+
+shinken-poller:
+   image: shinken-poller:latest
+   container_name: shinken-poller-1
+   volumes:
+       - ./custom_configs:/sites/shinken
+
+
+
+# THRUK
+shinken-thruk:
+   image: shinken-thruk:latest
+   volumes:
+       - ./custom_configs:/sites/shinken
+   ports:
+       - "8000:80"

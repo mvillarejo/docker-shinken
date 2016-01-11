@@ -1,0 +1,11 @@
+define service {
+    service_description   NSClient++ CPU
+    use                   5min_medium,windows-service
+    register              0
+    host_name             windows
+    check_command         check_windows_cpu
+
+    _DETAILLEDESC         Detect abnormal CPU usage
+    _IMPACT               Slow down applications hosted by the system
+    _FIXACTIONS           If recurrent situation then make performance audit
+}

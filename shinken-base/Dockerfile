@@ -3,7 +3,6 @@
 FROM        centos:centos7
 MAINTAINER  Manuel Villarejo <mjvillarejo@gmail.com>
 
-ARG         SHINKEN_VER
 ENV         SHINKEN_VER ${SHINKEN_VER:-2.4.2}
 ENV         SUPERVISOR_VER ${SUPERVISOR_VER:-3.2.0}
 ENV         ENV ${ENV:-mal}

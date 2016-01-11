@@ -5,7 +5,6 @@
 FROM        shinken-base
 MAINTAINER  Manuel Villarejo <mjvillarejo@gmail.com>
 
-ARG         THRUK_VER
 ENV         ENV ${ENV:-mal}
 ENV         POD ${POD:-monitoring}
 ENV         THRUK_VER ${THRUK_VER:-2.04}
